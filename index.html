@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" href="images/icon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur Discussion-HUB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles pour la popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Styles pour le bouton de fermeture */
+        .popup-close {
+            display: block;
+            margin: 10px auto; /* Espace autour du bouton "Fermer" */
+            cursor: pointer;
+        }
+
+        .popup-close-text {
+            background-color: transparent;
+            border: none;
+            color: #007bff; /* Couleur bleue */
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-title {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 30px; /* Espace entre les boutons de la barre de navigation */
+        }
+
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Ajustement pour aligner les boutons avec le haut du texte */
+        }
+
+        .image-container {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 1px; /* Ajustez la marge à votre convenance */
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+            text-align: right; /* Alignement des boutons à droite */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            margin-right: 10px; /* Espace entre les boutons */
+            text-decoration: none;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-title">Discussion-HUB</div>
+        <ul class="navbar-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="follow.html">Nous suivre</a></li>
+            <li><a href="https://discord.gg/SWRErx9ZDb">Rejoindre en français</a></li>
+            <li><a href="https://discord.gg/SWRErx9ZDb">Join in English</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <img src="images/Logo-discord.png" alt="Image d'accueil">
+        </div>
+        <div class="content">
+            <h1>Bienvenue sur Discussion-HUB</h1>
+            <p>
+                Bienvenue sur le serveur que j'ai récupéré, qui comptait initialement 200 membres. Cependant, j'ai réussi à en perdre quelques-uns, car je suis très compétent, mais il se trouve qu'Erozia est encore meilleur. Donc, rejoindre Erozia serait une meilleure option pour toi. Voilà!
+            </p>
+            <div class="buttons">
+                <a href="https://discord.gg/SWRErx9ZDb" class="button">Rejoindre en français</a>
+                <a href="https://discord.gg/SWRErx9ZDb" class="button">Join in English</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Dimension invalide</h2>
+            <p>Oops, il semble que votre écran soit trop petit pour continuer à utiliser ce site. Si vous êtes sur un smartphone, essayez de mettre l'écran en mode horizontal ou accédez directement à la version mobile du site en cliquant sur le bouton ci-dessous.</p>
+            <button class="button popup-mobile" onclick="window.location.href = 'phone-index.html'">Ouvrir la version mobile</button>
+            <button class="button popup-close" onclick="closePopup()">Fermer</button>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <iframe src="https://discord.com/widget?id=1144032365623128084&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> 
+        <iframe src="https://discord.com/widget?id=1154435279776645130&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>       
+    </div>
+
+    <script>
+        // Fonction pour ouvrir la popup
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Fonction pour fermer la popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // Vérifie la largeur de l'écran au chargement de la page et affiche la popup si nécessaire
+        window.onload = function () {
+            if (window.innerWidth < 900) {
+                openPopup();
+            }
+        };
+
+        // Écoute les changements de largeur d'écran et affiche/masque la popup en conséquence
+        window.addEventListener("resize", function () {
+            if (window.innerWidth < 900) {
+                openPopup();
+            } else {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
