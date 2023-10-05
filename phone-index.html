@@ -1,1 +1,264 @@
-<span> Pas encor fait </span>>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" href="images/icon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur Discussion-HUB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles pour la popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Styles pour le bouton de fermeture */
+        .popup-close {
+            display: block;
+            margin: 10px auto; /* Espace autour du bouton "Fermer" */
+            cursor: pointer;
+        }
+
+        .popup-close-text {
+            background-color: transparent;
+            border: none;
+            color: #007bff; /* Couleur bleue */
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-title {
+            font-size: 24px;
+        }
+
+        .menu-icon {
+            display: block;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: none;
+        }
+
+        .navbar-links.active {
+            display: flex;
+            flex-direction: column;
+            background-color: #333;
+        }
+
+        .navbar-links li {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+
+        /* Styles pour le contenu mobile */
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 10px 20px;
+            }
+
+            .menu-icon.active {
+                position: fixed;
+            }
+
+            .navbar-links.active {
+                display: flex;
+                flex-direction: column;
+                background-color: #333;
+            }
+
+            .navbar-links li {
+                margin-right: 0;
+                padding: 10px 0;
+            }
+
+            /* Fond sombre semi-transparent pour couvrir le contenu */
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 998;
+            }
+
+            .overlay.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+    <div class="navbar">
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="navbar-title">Discussion-HUB</div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="phone-index.html">Accueil</a></li>
+            <li><a href="phone-follow.html">Nous suivre</a></li>
+            <li><a href="https://discord.gg/SWRErx9ZDb">Rejoindre en français</a></li>
+            <li><a href="https://discord.gg/SWRErx9ZDb">Join in English</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Bienvenue sur Discussion-HUB</h1>
+        <p>
+            Bienvenue sur le serveur que j'ai récupéré, qui comptait initialement 200 membres. Cependant, j'ai réussi à en perdre quelques-uns, car je suis très compétent, mais il se trouve qu'Erozia est encore meilleur. Donc, rejoindre Erozia serait une meilleure option pour toi. Voilà!
+        </p>
+        <div class="buttons">
+            <a href="https://discord.gg/SWRErx9ZDb" class="button">Rejoindre en français</a>
+            <a href="https://discord.gg/SWRErx9ZDb" class="button">Join in English</a>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Dimension invalide</h2>
+            <p>Oops, il semble que votre écran soit trop petit pour continuer à utiliser ce site. Si vous êtes sur un smartphone, essayez de mettre l'écran en mode horizontal ou accédez directement à la version mobile du site en cliquant sur le bouton ci-dessous.</p>
+            <button class="button popup-mobile" onclick="window.location.href = 'index.html'">Ouvrir la version mobile</button>
+            <button class="button popup-close" onclick="closePopup()">Fermer</button>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour basculer le menu hamburger
+        function toggleMenu() {
+            var navbarLinks = document.getElementById("navbar-links");
+            var menuIcon = document.getElementById("menu-icon");
+            var overlay = document.getElementById("overlay");
+            navbarLinks.classList.toggle("active");
+            menuIcon.classList.toggle("active");
+            overlay.classList.toggle("active");
+        
+        }
+
+        // Fonction pour fermer le menu
+        function closeMenu() {
+            var navbarLinks = document.getElementById("navbar-links");
+            var menuIcon = document.getElementById("menu-icon");
+            var overlay = document.getElementById("overlay");
+            navbarLinks.classList.remove("active");
+            menuIcon.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+
+        // Fonction pour ouvrir la popup
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Fonction pour fermer la popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // Vérifie la largeur de l'écran au chargement de la page et affiche la popup si nécessaire
+        window.onload = function () {
+            if (window.innerWidth > 900) {
+                openPopup();
+            }
+        };
+
+        // Écoute les changements de largeur d'écran et affiche/masque la popup en conséquence
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 900) {
+                openPopup();
+            } else {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
