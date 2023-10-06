@@ -88,9 +88,6 @@ __________.__                     _______  ________________
             display: flex;
             justify-content: space-between;
             align-items: center;
-    
-
-            
         }
 
         .navbar-title {
@@ -193,25 +190,6 @@ __________.__                     _______  ________________
             font-weight: bold;
         }
 
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 1;
-            transition: opacity 0.8s ease-in-out;
-        }
-
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
         footer {
             background-color: #333;
             color: #fff;
@@ -228,10 +206,6 @@ __________.__                     _______  ________________
 </head>
 <body>
     
-    <div class="loader" id="loader">
-        <div style="color: #000000;">Loading...</div>
-    </div>
-
     <div class="cookie-banner">
         <span style="color: #ffffff;">Bienvenue sur ce site web créé par Pinou007. Son objectif principal est d'apporter de l'aide à Anora. Vous êtes invités à l'utiliser, mais veuillez conserver la bannière en bas de votre site. Seule Anora a le droit de la modifier, et si elle le souhaite, s'il peut décider de la laisser inchangée.</span>
         <button onclick="accepterCookies()">Fermez</button>
@@ -247,21 +221,10 @@ __________.__                     _______  ________________
         </ul>
     </div>
     <p style="margin-right: 80px;">&nbsp;</p>
-    <div class="container">
-        <div class="image-container">
-            <img src="images/Logo-discord.png" alt="Image d'accueil">
-        </div>
-        <div class="content">
-            <h1>Bienvenue sur Discussion-HUB</h1>
-            <p>
-                Bienvenue sur le serveur que j'ai récupéré, qui comptait initialement 200 membres. Cependant, j'ai réussi à en perdre quelques-uns, car je suis très compétent, mais il se trouve qu'Erozia est encore meilleur. Donc, rejoindre Erozia serait une meilleure option pour toi. Voilà!
-            </p>
-            <div class="buttons">
-                <a href="https://discord.gg/SWRErx9ZDb" class="button">Rejoindre en français</a>
-                <a href="https://discord.gg/SWRErx9ZDb" class="button">Join in English</a>
-            </div>
-        </div>
-    </div>
+   
+
+
+
     <div class="popup" id="popup">
         <div class="popup-content">
             <h2>Dimension invalide</h2>
@@ -270,32 +233,7 @@ __________.__                     _______  ________________
             <button class="button popup-close" onclick="closePopup()">Fermer</button>
         </div>
     </div>
-    <p style="margin-right: 80px;">&nbsp;</p>
-    <center>
-    <div class="card">
-     
-        <img src="svg/icon.svg" alt="Icône 1" class="icon">
-        <div class="title">Iaculis</div>
-        <div class="description">Nibh venenatis cras sed felis eget velit aliquet. Sit amet porttitor eget dolor morbi. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Felis eget velit aliquet sagittis id. Nisi porta lorem mollis aliquam ut porttitor leo a. Sed felis eget velit aliquet sagittis id consectetur. Odio ut enim blandit volutpat maecenas volutpat blandit. Quam id leo in vitae turpis massa. Semper auctor neque vitae tempus quam. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Maecenas sed enim ut sem viverra aliquet eget. Egestas diam in arcu cursus euismod quis viverra nibh cras. Duis ultricies lacus sed turpis. Nibh sit amet commodo nulla facilisi. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Vulputate enim nulla aliquet porttitor.</div>
-    </div>
-    <div class="card">
-        <img src="svg/icon.svg" alt="Icône 2" class="icon">
-        <div class="title">Ultrices</div>
-        <div class="description">Elementum pulvinar etiam non quam lacus. Eu non diam phasellus vestibulum lorem sed risus. Massa placerat duis ultricies lacus. Nec sagittis aliquam malesuada bibendum arcu. Velit scelerisque in dictum non consectetur a erat nam. Sed felis eget velit aliquet sagittis id. Aliquam sem et tortor consequat id porta nibh venenatis cras. Convallis posuere morbi leo urna molestie at. Dignissim diam quis enim lobortis scelerisque fermentum dui. Dictum at tempor commodo ullamcorper a. Dui ut ornare lectus sit amet est placerat in egestas. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Orci nulla pellentesque dignissim enim. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Duis ut diam quam nulla porttitor massa id. Cursus sit amet dictum sit amet justo.</div>
-    </div>
-    <div class="card">
-        <img src="svg/icon.svg" alt="Icône 3" class="icon">
-        <div class="title">Dapibus</div>
-        <div class="description">Nibh venenatis cras sed felis eget velit aliquet. Sit amet porttitor eget dolor morbi. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Felis eget velit aliquet sagittis id. Nisi porta lorem mollis aliquam ut porttitor leo a. Sed felis eget velit aliquet sagittis id consectetur. Odio ut enim blandit volutpat maecenas volutpat blandit. Quam id leo in vitae turpis massa. Semper auctor neque vitae tempus quam. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Maecenas sed enim ut sem viverra aliquet eget. Egestas diam in arcu cursus euismod quis viverra nibh cras. Duis ultricies lacus sed turpis. Nibh sit amet commodo nulla facilisi. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Vulputate enim nulla aliquet porttitor.</div>
-  
-    </div>
-
-    <p style="margin-right: 80px;">&nbsp;</p>
-
-    <div style="text-align: center;">
-        <iframe src="https://discord.com/widget?id=1144032365623128084&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> 
-        <iframe src="https://discord.com/widget?id=1154435279776645130&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>       
-    </div>
+    
     <p style="margin-right: 500px;">&nbsp;</p>
     <p style="margin-right: 500px;">&nbsp;</p>
 
@@ -303,7 +241,7 @@ __________.__                     _______  ________________
         <div class="footer-texte">
             Contactez-nous : <a href="mailto:contact@exemple.com" style="color: #ccc;">contact@exemple.com</a>
        <br>
-            Conditions d'utilisation | <a href="privacy-policy.html "style="color: #ccc"> Politique de confidentialité</a>
+            Conditions d'utilisation | <a href="politique-de-confidentialite.html "style="color: #ccc"> Politique de confidentialité</a>
             <br>
             Fait avec ❤ par Pinou007
         </div>
@@ -335,12 +273,6 @@ __________.__                     _______  ________________
                 closePopup();
             }
         });
-
-
-        window.onload = function () {
-            // Au chargement complet de la page, masquez l'élément de chargement
-            document.getElementById("loader").classList.add("hidden");
-        };
     </script>
 </body>
 </html>

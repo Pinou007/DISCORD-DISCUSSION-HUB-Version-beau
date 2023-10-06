@@ -151,6 +151,25 @@ __________.__                     _______  ________________
             margin-right: 0;
         }
 
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         /* Styles pour le contenu mobile */
         @media (max-width: 900px) {
             .navbar {
@@ -191,6 +210,12 @@ __________.__                     _______  ________________
     </style>
 </head>
 <body>
+
+    <div class="loader" id="loader">
+        <div style="color: #000000;">Loading...</div>
+    </div>
+
+
     <div class="overlay" id="overlay" onclick="closeMenu()"></div>
     <div class="navbar">
         <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
@@ -270,6 +295,16 @@ __________.__                     _______  ________________
                 closePopup();
             }
         });
+
+
+
+        window.onload = function () {
+            // Au chargement complet de la page, masquez l'élément de chargement
+            document.getElementById("loader").classList.add("hidden");
+        };
+
+
+
     </script>
 </body>
 </html>
