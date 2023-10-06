@@ -202,10 +202,32 @@ __________.__                     _______  ________________
             font-size: 12px;
             color: #ccc;
         }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
     </style>
 </head>
 <body>
-    
+    <div class="loader" id="loader">
+        <div style="color: #000000;">Loading...</div>
+    </div>
     <div class="cookie-banner">
         <span style="color: #ffffff;">Bienvenue sur ce site web créé par Pinou007. Son objectif principal est d'apporter de l'aide à Anora. Vous êtes invités à l'utiliser, mais veuillez conserver la bannière en bas de votre site. Seule Anora a le droit de la modifier, et si elle le souhaite, s'il peut décider de la laisser inchangée.</span>
         <button onclick="accepterCookies()">Fermez</button>
@@ -222,6 +244,27 @@ __________.__                     _______  ________________
     </div>
     <p style="margin-right: 80px;">&nbsp;</p>
    
+
+
+
+
+
+
+<!--
+
+    Mettre ton code ici <3
+
+-->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,6 +316,11 @@ __________.__                     _______  ________________
                 closePopup();
             }
         });
+
+        window.onload = function () {
+            // Au chargement complet de la page, masquez l'élément de chargement
+            document.getElementById("loader").classList.add("hidden");
+        };
     </script>
 </body>
 </html>
